@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Royal Group of Hostel | Islamabad Hostel City</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary": "#68001a",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#283044",
+                    "on-secondary-fixed-variant": "#004395",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-primary-fixed-variant": "#920028",
+                    "surface-tint": "#ffb3b6",
+                    "on-primary-fixed": "#40000c",
+                    "error": "#ffb4ab",
+                    "outline": "#ac8889",
+                    "error-container": "#93000a",
+                    "primary-container": "#e11d48",
+                    "inverse-primary": "#be0037",
+                    "background": "#0b1326",
+                    "surface": "#0b1326",
+                    "surface-container-high": "#222a3d",
+                    "surface-dim": "#0b1326",
+                    "on-primary-container": "#fffaf9",
+                    "surface-container": "#171f33",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-background": "#dae2fd",
+                    "outline-variant": "#5c3f40",
+                    "primary-fixed": "#ffdada",
+                    "tertiary": "#4edea3",
+                    "on-secondary-container": "#e6ecff",
+                    "surface-bright": "#31394d",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#001a42",
+                    "surface-container-lowest": "#060e20",
+                    "secondary": "#adc6ff",
+                    "secondary-fixed": "#d8e2ff",
+                    "secondary-container": "#0566d9",
+                    "on-surface": "#dae2fd",
+                    "inverse-surface": "#dae2fd",
+                    "on-tertiary-container": "#eefff3",
+                    "on-secondary": "#002e6a",
+                    "surface-container-highest": "#2d3449",
+                    "primary": "#ffb3b6",
+                    "surface-variant": "#2d3449",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "on-tertiary-fixed": "#002113",
+                    "on-surface-variant": "#e5bdbe",
+                    "surface-container-low": "#131b2e",
+                    "primary-fixed-dim": "#ffb3b6",
+                    "tertiary-container": "#00845a",
+                    "on-tertiary": "#003824"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-padding": "24px",
+                    "desktop-max": "1440px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(23, 31, 51, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-red { box-shadow: 0 0 30px rgba(255, 179, 182, 0.15); }
+        .glow-green { box-shadow: 0 0 30px rgba(78, 222, 163, 0.1); }
+        .glow-blue { box-shadow: 0 0 30px rgba(173, 198, 255, 0.1); }
+        
+        .hero-gradient {
+            background: radial-gradient(circle at 20% 30%, rgba(225, 29, 72, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(0, 132, 90, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(5, 102, 217, 0.05) 0%, transparent 70%);
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .active-nav {
+            color: #ffb3b6;
+            font-weight: 700;
+            border-bottom: 2px solid #ffb3b6;
+            padding-bottom: 4px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-anim { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface/30 backdrop-blur-lg border-b border-white/10">
+<div class="max-w-desktop-max mx-auto px-base py-4 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="text-headline-md font-headline-md tracking-tight text-primary">Royal Group</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-label-sm font-label-sm active-nav" href="#">Home</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Branches</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Fees</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Student Portal</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80">account_circle</span>
+<span class="text-label-sm font-label-sm text-primary hidden sm:block">Welcome, Student</span>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-20 hero-gradient overflow-hidden">
+<!-- Background Animation -->
+
+<div class="relative z-10 max-w-desktop-max mx-auto px-container-padding w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                    Premium Living in Islamabad
+                </div>
+<h1 class="font-display-lg text-display-lg leading-tight">
+                    ROYAL GROUP <br/>
+<span class="text-primary">OF HOSTEL</span>
+</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant max-w-xl">
+                    Islamabad Hostel City
+                </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant/80 max-w-lg">
+                    Smart Hostel Management for Students, Fees, Rooms, Transport and Complaints. Experience luxury accommodation with automated security and management.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 rounded-xl bg-primary-container text-on-primary-container font-headline-md text-headline-md hover:scale-105 transition-all shadow-lg shadow-primary/20">
+                        Student Login
+                    </button>
+<button class="px-8 py-4 rounded-xl border border-white/20 glass-card hover:bg-white/10 transition-all font-headline-md text-headline-md">
+                        Admin Login
+                    </button>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="relative z-10 glass-card rounded-3xl p-4 glow-red float-anim">
+<img class="rounded-2xl w-full aspect-[4/5] object-cover" data-alt="A cinematic, high-end 3D architectural visualization of a modern, multi-story luxury hostel building in Islamabad. The scene is set during blue hour with warm interior lights glowing through large glass windows. The building is surrounded by sleek, minimalist landscaping. The visual style is professional, using a deep color palette of obsidian, crimson accents, and soft cyan atmospheric lighting to evoke a sense of security and premium hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-eb1IHaDViuUPrX7IvuG0TiVEfvUHsh8HN_nkGnXcEY9NBFACwno1LYiUQG264luGCVFI06XNi15yNURppx7mu8a1pYL_6c9jS4fo1hHI8lMyL22O0Pfilv3gtscOUXk96LyMrSokRqCKKXvW05DL5xAq1YbkwMjTt47KRR9S58tdoquN77p59CDShgYVhXixTavMFLAxx5is54hWz5rJG-GKwx3HcFWjvkhUZzBTORvdpSs49w1v_xIUfof1CEW70JR18rY7Pw"/>
+<div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl glow-blue">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-secondary-container rounded-full">
+<span class="material-symbols-outlined text-on-secondary-container">directions_bus</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Transport Status</p>
+<p class="text-headline-md font-headline-md">Active Now</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Abstract Elements -->
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-tertiary/20 blur-3xl rounded-full"></div>
+<div class="absolute top-1/2 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+</div>
+</div>
+</header>
+<!-- Bento Grid Highlight Cards -->
+<section class="py-24 relative bg-surface-container-lowest">
+<div class="max-w-desktop-max mx-auto px-container-padding">
+<div class="mb-16 text-center space-y-4">
+<h2 class="font-display-lg text-display-lg leading-none">Management Excellence</h2>
+<p class="text-body-lg text-on-surface-variant">Integrated systems for a seamless living experience.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
+<!-- Large Card: Branches -->
+<div class="md:col-span-2 lg:row-span-2 glass-card rounded-[2rem] p-8 glow-red group hover:border-primary/40 transition-all flex flex-col justify-between min-h-[400px]">
+<div>
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">location_city</span>
+</div>
+<h3 class="font-display-lg text-display-lg-mobile mb-4">Total Branches</h3>
+<p class="text-body-lg text-on-surface-variant">Strategically located across Islamabad Hostel City and major hubs, ensuring accessibility for all university students.</p>
+</div>
+<div class="mt-8 flex items-baseline gap-2">
+<span class="text-6xl font-bold text-primary">12+</span>
+<span class="text-label-sm text-on-surface-variant">Prime Locations</span>
+</div>
+</div>
+<!-- Secure Records -->
+<div class="glass-card rounded-[2rem] p-6 glow-blue group hover:border-secondary/40 transition-all">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary">security</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Secure Student Records</h4>
+<p class="text-body-md text-on-surface-variant/70">Blockchain-encrypted personal and academic data management.</p>
+</div>
+<!-- Online Fee Tracking -->
+<div class="glass-card rounded-[2rem] p-6 glow-green group hover:border-tertiary/40 transition-all">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-tertiary">payments</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Online Fee Tracking</h4>
+<p class="text-body-md text-on-surface-variant/70">Automated invoicing and digital payment history at your fingertips.</p>
+</div>
+<!-- Complaint Support -->
+<div class="lg:col-span-2 glass-card rounded-[2rem] p-8 glow-red flex items-center gap-8 group hover:border-primary/40 transition-all">
+<div class="hidden sm:flex shrink-0 w-24 h-24 rounded-full bg-primary/10 items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">support_agent</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">24/7 Complaint Support</h4>
+<p class="text-body-md text-on-surface-variant/70">Our dedicated concierge desk ensures all maintenance and service issues are resolved within 4 hours.</p>
+</div>
+</div>
+<!-- Transport -->
+<div class="glass-card rounded-[2rem] p-6 glow-blue flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary">commute</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Transport Facility</h4>
+<p class="text-body-md text-on-surface-variant/70">Dedicated shuttle service to all major Islamabad universities.</p>
+</div>
+<div class="pt-4">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-sm">Live Tracking Available</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services / Feature Grid Section -->
+<section class="py-24 bg-surface relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 left-0 w-full h-full" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+</div>
+<div class="max-w-desktop-max mx-auto px-container-padding relative z-10">
+<div class="flex flex-col lg:flex-row justify-between items-end mb-12 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-display-lg text-display-lg mb-4">Elite Living Standards</h2>
+<p class="text-body-lg text-on-surface-variant">We redefine the student lifestyle with luxury amenities and high-end security protocols.</p>
+</div>
+<button class="px-6 py-3 rounded-lg border border-primary text-primary font-label-sm hover:bg-primary/10 transition-all">
+                    View All Amenities
+                </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Room Service -->
+<div class="space-y-4 p-6 rounded-2xl bg-surface-container-high/50 border border-white/5 hover:bg-surface-container-highest transition-all group">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">bed</span>
+<h5 class="text-headline-md font-headline-md">Luxury Rooms</h5>
+<p class="text-on-surface-variant/70 text-body-md">Climate-controlled, sound-proofed rooms with ergonomic workstations and high-speed Wi-Fi.</p>
+</div>
+<!-- Dining -->
+<div class="space-y-4 p-6 rounded-2xl bg-surface-container-high/50 border border-white/5 hover:bg-surface-container-highest transition-all group">
+<span class="material-symbols-outlined text-tertiary text-3xl group-hover:scale-110 transition-transform">restaurant</span>
+<h5 class="text-headline-md font-headline-md">Gourmet Mess</h5>
+<p class="text-on-surface-variant/70 text-body-md">Nutritionally balanced, chef-prepared meals served 3 times daily with hygienic standards.</p>
+</div>
+<!-- Fitness -->
+<div class="space-y-4 p-6 rounded-2xl bg-surface-container-high/50 border border-white/5 hover:bg-surface-container-highest transition-all group">
+<span class="material-symbols-outlined text-secondary text-3xl group-hover:scale-110 transition-transform">fitness_center</span>
+<h5 class="text-headline-md font-headline-md">Fitness Center</h5>
+<p class="text-on-surface-variant/70 text-body-md">State-of-the-art gym equipment and meditation spaces for physical and mental well-being.</p>
+</div>
+<!-- Power -->
+<div class="space-y-4 p-6 rounded-2xl bg-surface-container-high/50 border border-white/5 hover:bg-surface-container-highest transition-all group">
+<span class="material-symbols-outlined text-yellow-400 text-3xl group-hover:scale-110 transition-transform">bolt</span>
+<h5 class="text-headline-md font-headline-md">24/7 Power</h5>
+<p class="text-on-surface-variant/70 text-body-md">Uninterrupted solar and generator backup ensuring study never stops for load-shedding.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Map/Location Section -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-desktop-max mx-auto px-container-padding">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<h2 class="font-display-lg text-display-lg">Find Your New Home</h2>
+<p class="text-body-lg text-on-surface-variant">Our branches are perfectly positioned in the heart of Islamabad, near major universities including NUST, FAST, and COMSATS.</p>
+<div class="space-y-4">
+<div class="flex items-start gap-4 glass-card p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary">pin_drop</span>
+<div>
+<p class="font-headline-md text-body-md font-semibold">Head Office</p>
+<p class="text-on-surface-variant/70">Main Road, Sector D-12, Islamabad Hostel City.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 glass-card p-4 rounded-xl">
+<span class="material-symbols-outlined text-secondary">phone_in_talk</span>
+<div>
+<p class="font-headline-md text-body-md font-semibold">Direct Contact</p>
+<p class="text-on-surface-variant/70">+92 (051) 123-4567 | +92 300 850 0000</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative h-[400px] rounded-[2.5rem] overflow-hidden glass-card p-2">
+<div class="w-full h-full rounded-[2rem] bg-surface-container-high relative flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 opacity-80 bg-cover bg-center" data-location="Islamabad" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwAy39zuE0rY84JyazAwskrZWglTJmkbDU47pngi2VW6Qhv9x1NwKtCegwbJDKuS4qrETFM_D06I0T68CPKZakgr6imJoz2wGW2fgRuk-Y5fP680IogwICsO5CUDb8DYAC9UW9WDSIb3_LfU3eg6K4hisI13k4x83ASqO7nkQf8pH0XjH9ZBiRnMb247mm9gTiBa1U2UJpMa_-5COXHRnemaDxE_WF3Er0s3r47hBIMQPInHZQdc0OYdk3CcgpUSuFjYL498Uggg')"></div>
+<div class="relative z-10 px-6 py-3 bg-primary-container text-on-primary-container rounded-full font-label-sm shadow-2xl flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+                            Visit Our Branches
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-12 border-t border-white/10 bg-surface">
+<div class="max-w-desktop-max mx-auto px-container-padding">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-center md:text-left">
+<span class="text-headline-md font-headline-md tracking-tight text-primary">Royal Group</span>
+<p class="text-on-surface-variant/60 text-label-sm mt-2">© 2024 Royal Group of Hostels. All Rights Reserved.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll micro-interaction for Navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-background/90', 'shadow-2xl');
+                nav.classList.remove('bg-surface/30');
+            } else {
+                nav.classList.remove('bg-background/90', 'shadow-2xl');
+                nav.classList.add('bg-surface/30');
+            }
+        });
+
+        // Hover effect for bento cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

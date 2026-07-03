@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Room Details | Royal Group of Hostel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary": "#68001a",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#283044",
+                    "on-secondary-fixed-variant": "#004395",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-primary-fixed-variant": "#920028",
+                    "surface-tint": "#ffb3b6",
+                    "on-primary-fixed": "#40000c",
+                    "error": "#ffb4ab",
+                    "outline": "#ac8889",
+                    "error-container": "#93000a",
+                    "primary-container": "#e11d48",
+                    "inverse-primary": "#be0037",
+                    "background": "#0b1326",
+                    "surface": "#0b1326",
+                    "surface-container-high": "#222a3d",
+                    "surface-dim": "#0b1326",
+                    "on-primary-container": "#fffaf9",
+                    "surface-container": "#171f33",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-background": "#dae2fd",
+                    "outline-variant": "#5c3f40",
+                    "primary-fixed": "#ffdada",
+                    "tertiary": "#4edea3",
+                    "on-secondary-container": "#e6ecff",
+                    "surface-bright": "#31394d",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#001a42",
+                    "surface-container-lowest": "#060e20",
+                    "secondary": "#adc6ff",
+                    "secondary-fixed": "#d8e2ff",
+                    "secondary-container": "#0566d9",
+                    "on-surface": "#dae2fd",
+                    "inverse-surface": "#dae2fd",
+                    "on-tertiary-container": "#eefff3",
+                    "on-secondary": "#002e6a",
+                    "surface-container-highest": "#2d3449",
+                    "primary": "#ffb3b6",
+                    "surface-variant": "#2d3449",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "on-tertiary-fixed": "#002113",
+                    "on-surface-variant": "#e5bdbe",
+                    "surface-container-low": "#131b2e",
+                    "primary-fixed-dim": "#ffb3b6",
+                    "tertiary-container": "#00845a",
+                    "on-tertiary": "#003824"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-padding": "24px",
+                    "desktop-max": "1440px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(23, 31, 51, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 179, 182, 0.3);
+            box-shadow: 0 0 30px rgba(255, 179, 182, 0.05);
+        }
+
+        .glow-primary {
+            box-shadow: 0 0 20px rgba(255, 179, 182, 0.2);
+        }
+
+        .zebra-glass > div:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1326;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d3449;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffb3b6;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- Side Navigation Bar -->
+<aside class="fixed left-0 top-0 h-full w-64 flex flex-col p-4 bg-surface-container/40 backdrop-blur-xl border-r border-white/10 z-50">
+<div class="mb-10 px-2">
+<h1 class="text-headline-md font-headline-md font-bold text-primary tracking-tight">Royal Group</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant/70">Islamabad Hostel City</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">person</span>
+<span class="font-medium">Profile</span>
+</a>
+<!-- Active State: Room Details -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg shadow-lg shadow-primary/20 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">bed</span>
+<span class="font-medium">Room Details</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">payments</span>
+<span class="font-medium">Fee Status</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">directions_bus</span>
+<span class="font-medium">Transport</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">report_problem</span>
+<span class="font-medium">Complaints</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">notifications</span>
+<span class="font-medium">Notifications</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-white/10">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg glow-primary hover:opacity-90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+                Submit Fee
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen relative">
+<!-- Top Navigation Bar -->
+<header class="flex justify-between items-center w-full px-8 py-4 bg-surface/30 backdrop-blur-md border-b border-white/10 sticky top-0 z-40">
+<div>
+<h2 class="text-headline-md font-headline-md text-primary tracking-tight">Royal Group of Hostel</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container-lowest border border-white/10 rounded-full px-4 py-1.5 w-64">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+<input class="bg-transparent border-none text-label-sm focus:ring-0 text-on-surface w-full" placeholder="Search facilities..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Welcome, Student</span>
+<div class="h-10 w-10 rounded-full border-2 border-primary/30 overflow-hidden bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-8 max-w-[1200px] mx-auto">
+<!-- Hero Header Section -->
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary/10 border border-tertiary/20 text-tertiary text-label-sm mb-4">
+<span class="w-2 h-2 rounded-full bg-tertiary mr-2 animate-pulse"></span>
+                        Active Residency
+                    </div>
+<h3 class="text-display-lg font-display-lg text-on-surface">Room B3-204</h3>
+<p class="text-body-lg text-on-surface-variant mt-2">Branch 3 | 2nd Floor | Bed 1</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2.5 rounded-lg glass-card text-on-surface font-semibold hover:bg-white/5 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">print</span>
+                        Print Slip
+                    </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-on-primary font-bold glow-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">edit_square</span>
+                        Request Shift
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Room Details Bento Cell -->
+<div class="md:col-span-2 glass-card rounded-xl overflow-hidden">
+<div class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5">
+<h4 class="font-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">info</span>
+                            Room Specification
+                        </h4>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-3 divide-x divide-y divide-white/5 zebra-glass">
+<div class="p-6 space-y-1">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Room Type</span>
+<p class="font-bold text-lg text-on-surface">Standard</p>
+</div>
+<div class="p-6 space-y-1">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Sharing</span>
+<p class="font-bold text-lg text-on-surface">3-Person</p>
+</div>
+<div class="p-6 space-y-1">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Mess Service</span>
+<p class="font-bold text-lg text-tertiary">Yes (Included)</p>
+</div>
+<div class="p-6 space-y-1">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Transport</span>
+<p class="font-bold text-lg text-tertiary">Yes (Available)</p>
+</div>
+<div class="p-6 space-y-1">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Floor</span>
+<p class="font-bold text-lg text-on-surface">2nd Floor</p>
+</div>
+<div class="p-6 space-y-1">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Hostel Branch</span>
+<p class="font-bold text-lg text-on-surface">Branch 3</p>
+</div>
+</div>
+</div>
+<!-- Warden Information Bento Cell -->
+<div class="glass-card rounded-xl p-6 flex flex-col justify-between">
+<div>
+<h4 class="font-headline-md text-primary flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined">support_agent</span>
+                            Staff Assigned
+                        </h4>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-xl bg-secondary-container/30 flex items-center justify-center border border-secondary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged male hostel warden named Mr. Kashif, wearing a formal suit, standing against a blurred background of a modern hostel lobby with soft cinematic lighting and cool blue tones matching a high-end hospitality environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFgxuQAab-wNuOZ8z4KmrXVaR_mEdzU4X4iWH_aapUspg-Z7qfqhJ6vBoTd3QvLwvk8Y5nofTKoMNwA-cPG4TlE8xeSlS73MSV_cmJEjjuReBYgDy5HFwa_qCT_r1zKlI9BbkB35HnlQ87iMIDl3V23HhunCH4aiy7LS5gWeZFq7cB0HBdyGQkSOvyyJyz7F0RSOBBUCpZHWgxSis3-WtoAiT1tnW3sVwjr6ngJzX91S-4EXQir9blHi0gDreW8ds9pcWWYVW0YA"/>
+</div>
+<div>
+<p class="text-on-surface font-bold text-lg">Mr. Kashif</p>
+<p class="text-on-surface-variant text-sm">Hostel Warden</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-white/5">
+<span class="text-label-sm text-on-surface-variant block mb-1">Contact Number</span>
+<p class="font-medium text-secondary">+92-300-1234567</p>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-white/5">
+<span class="text-label-sm text-on-surface-variant block mb-1">Availability</span>
+<p class="font-medium text-on-surface">09:00 AM - 09:00 PM</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border border-secondary/30 text-secondary rounded-lg font-bold hover:bg-secondary/5 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">call</span>
+                        Call Warden
+                    </button>
+</div>
+<!-- Hostel Rules Bento Cell -->
+<div class="md:col-span-3 glass-card rounded-xl overflow-hidden">
+<div class="p-6 border-b border-white/10 flex items-center justify-between">
+<h4 class="font-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">gavel</span>
+                            Hostel Discipline &amp; Rules
+                        </h4>
+<span class="text-label-sm text-on-surface-variant">Last updated: Aug 2023</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
+<div class="bg-surface-container-highest/30 p-5 rounded-lg border border-white/5 hover:bg-surface-container-highest/50 transition-colors">
+<span class="material-symbols-outlined text-primary mb-3">payments</span>
+<h5 class="font-bold text-on-surface mb-2">Fee Deadlines</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed">Residents must pay all hostel fees before the 5th of every month to avoid penalties.</p>
+</div>
+<div class="bg-surface-container-highest/30 p-5 rounded-lg border border-white/5 hover:bg-surface-container-highest/50 transition-colors">
+<span class="material-symbols-outlined text-primary mb-3">cleaning_services</span>
+<h5 class="font-bold text-on-surface mb-2">Hygiene Standards</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed">Maintain cleanliness within the room. Waste should be disposed of in designated bins daily.</p>
+</div>
+<div class="bg-surface-container-highest/30 p-5 rounded-lg border border-white/5 hover:bg-surface-container-highest/50 transition-colors">
+<span class="material-symbols-outlined text-primary mb-3">emergency</span>
+<h5 class="font-bold text-on-surface mb-2">Reporting Issues</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed">Report any maintenance or security issues immediately via the Complaints portal.</p>
+</div>
+<div class="bg-surface-container-highest/30 p-5 rounded-lg border border-white/5 hover:bg-surface-container-highest/50 transition-colors">
+<span class="material-symbols-outlined text-primary mb-3">verified_user</span>
+<h5 class="font-bold text-on-surface mb-2">Strict Discipline</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed">Following the hostel's code of conduct is mandatory. Non-compliance may lead to expulsion.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Decorative Element -->
+<div class="mt-12 relative h-48 rounded-2xl overflow-hidden glass-card border border-white/20">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10"></div>
+<div class="absolute inset-0 opacity-40">
+<div class="w-full h-full" data-alt="A high-end architectural photograph of a luxury hostel room interior with premium lighting, showing clean minimalist wooden beds, large windows overlooking a city at dusk, and a sleek modern aesthetic with deep shadows and soft ambient highlights in the colors of the Royal Group brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxsxBCPr1yez32JCzTNYHwLodRtVdeTgRYPEzJ5j-DTcPVxu0s3C8gft-7sBuJi1caLIVqn1EHH9kFo1cv-H-7HiRIxd_snE4J3klRi9hWjeUAg6TN9DAdwjpXdEFREscvk8WYnZXH77mSbBqSfFlyjAprRXTsDq5HUe3ImrzVct8Dwwi188uq_sgHB4QtLV8eOc76XFWRQw7-lDzIOhyaznCFkWNeeK9DTAxvpHaOb3-_O49p6pAs68ofDmqrIonAPB3yV-lc5g')"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center z-20">
+<div class="text-center">
+<p class="text-headline-md font-headline-md text-white drop-shadow-xl">Experience Premium Living</p>
+<p class="text-on-surface-variant mt-2">Standard Room B3-204 is verified for all safety standards.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Info -->
+<footer class="p-8 text-center text-label-sm text-on-surface-variant/50 max-w-[1200px] mx-auto border-t border-white/5">
+            © 2023 Royal Group of Hostels Management System. All Rights Reserved.
+        </footer>
+</main>
+<!-- Floating Atmosphere Script -->
+<script>
+        // Simple interaction for cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+
+        // Search bar interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary/40');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary/40');
+        });
+    </script>
+</body></html>

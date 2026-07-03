@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transport Details - Royal Group of Hostel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary": "#68001a",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#283044",
+                    "on-secondary-fixed-variant": "#004395",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-primary-fixed-variant": "#920028",
+                    "surface-tint": "#ffb3b6",
+                    "on-primary-fixed": "#40000c",
+                    "error": "#ffb4ab",
+                    "outline": "#ac8889",
+                    "error-container": "#93000a",
+                    "primary-container": "#e11d48",
+                    "inverse-primary": "#be0037",
+                    "background": "#0b1326",
+                    "surface": "#0b1326",
+                    "surface-container-high": "#222a3d",
+                    "surface-dim": "#0b1326",
+                    "on-primary-container": "#fffaf9",
+                    "surface-container": "#171f33",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-background": "#dae2fd",
+                    "outline-variant": "#5c3f40",
+                    "primary-fixed": "#ffdada",
+                    "tertiary": "#4edea3",
+                    "on-secondary-container": "#e6ecff",
+                    "surface-bright": "#31394d",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#001a42",
+                    "surface-container-lowest": "#060e20",
+                    "secondary": "#adc6ff",
+                    "secondary-fixed": "#d8e2ff",
+                    "secondary-container": "#0566d9",
+                    "on-surface": "#dae2fd",
+                    "inverse-surface": "#dae2fd",
+                    "on-tertiary-container": "#eefff3",
+                    "on-secondary": "#002e6a",
+                    "surface-container-highest": "#2d3449",
+                    "primary": "#ffb3b6",
+                    "surface-variant": "#2d3449",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "on-tertiary-fixed": "#002113",
+                    "on-surface-variant": "#e5bdbe",
+                    "surface-container-low": "#131b2e",
+                    "primary-fixed-dim": "#ffb3b6",
+                    "tertiary-container": "#00845a",
+                    "on-tertiary": "#003824"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-padding": "24px",
+                    "desktop-max": "1440px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #0b1326;
+        color: #dae2fd;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+      .glass-card {
+        background: rgba(23, 31, 51, 0.4);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .active-glow {
+        box-shadow: 0 0 20px rgba(255, 179, 182, 0.15);
+      }
+      .zebra-glass > div:nth-child(even) {
+        background: rgba(255, 255, 255, 0.03);
+      }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- Background Shader -->
+
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-4 w-64 bg-surface-container/40 backdrop-blur-xl border-r border-white/10 z-50 shadow-[0_0_30px_rgba(255,179,182,0.1)]">
+<div class="mb-10 px-2">
+<h1 class="text-headline-md font-headline-md font-bold text-primary tracking-tight">Royal Group</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant opacity-70">Islamabad Hostel City</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body-md text-body-md">Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined">bed</span>
+<span class="font-body-md text-body-md">Room Details</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-body-md text-body-md">Fee Status</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg shadow-lg shadow-primary/20 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_bus</span>
+<span class="font-body-md text-body-md">Transport</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined">report_problem</span>
+<span class="font-body-md text-body-md">Complaints</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-body-md text-body-md">Notifications</span>
+</a>
+</nav>
+<div class="mt-auto pt-4">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+                Submit Fee
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-base py-4 bg-surface/30 backdrop-blur-md border-b border-white/10 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<h2 class="text-headline-md font-headline-md tracking-tight text-primary">Transport Details</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<input class="bg-surface-container border-none rounded-full px-4 py-2 text-label-sm focus:ring-1 focus:ring-secondary-container transition-all w-48 group-focus-within:w-64" placeholder="Search..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant">search</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Welcome, Student</span>
+<div class="w-10 h-10 rounded-full border border-primary/30 p-0.5 overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="A professional headshot of a young male student in university attire, set against a blurred cinematic library background with soft glowing bokeh lights. The lighting is warm and directional, emphasizing a high-end luxury hostel atmosphere with deep blue and soft red tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf-gvZwb0wEBsgdWetLFXzF8tDEX10tIlNZJ7vr19qGR02wWdAvbGzqURo78brjC3RLQP4Ry6ZvxrZClsoIdLhA2a7shUgHeKlgL-ATnzsR-sDdiK0oAKVeBUE9vTPyIk5NOUQSyVfD_Fk-EzOF3WMKtimPGIxY6-8Ye2yR1LNzjSfW4053wTDhMv8-HJn5tb2nZIloq_1gCQrXKDqbIqXNZE0iTZDAP7fqZ8oot4I_8MmXrktw-K4PVw6RT83LqwgWcASB1UWYg"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 max-w-[1440px] mx-auto w-full">
+<!-- Hero Stats / Status Header -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="glass-card p-6 flex items-center gap-4 active-glow">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant">Transport Status</p>
+<h3 class="text-headline-md font-headline-md text-tertiary">Active</h3>
+</div>
+</div>
+<div class="glass-card p-6 flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">currency_rupee</span>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant">Monthly Fee</p>
+<h3 class="text-headline-md font-headline-md">Rs. 4,500</h3>
+</div>
+</div>
+<div class="glass-card p-6 flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">route</span>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant">Route Code</p>
+<h3 class="text-headline-md font-headline-md">H-12 Express</h3>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main Details Card -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<div class="glass-card overflow-hidden">
+<div class="p-6 border-b border-white/5 bg-white/5 flex justify-between items-center">
+<h4 class="text-headline-md font-headline-md">Journey Details</h4>
+<span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-label-sm">In Service</span>
+</div>
+<div class="p-6">
+<div class="flex flex-col gap-6 relative">
+<!-- Vertical Timeline Line -->
+<div class="absolute left-[23px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary to-secondary opacity-30"></div>
+<div class="flex gap-6 items-start relative z-10">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="flex-1">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-widest">Pickup Point</p>
+<h5 class="text-body-lg font-bold">Royal Hostel Gate #01</h5>
+<p class="text-label-sm text-on-surface-variant">Departure: 07:45 AM</p>
+</div>
+</div>
+<div class="flex gap-6 items-start relative z-10">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-secondary shadow-lg">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="flex-1">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-widest">Drop-off Point</p>
+<h5 class="text-body-lg font-bold">University Main Campus (Central)</h5>
+<p class="text-label-sm text-on-surface-variant">Estimated Arrival: 08:20 AM</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 border-t border-white/5 grid grid-cols-2 gap-4">
+<div class="p-4 rounded-lg bg-surface-container-low border border-white/5">
+<p class="text-label-sm text-on-surface-variant">Vehicle Number</p>
+<p class="text-body-lg font-bold text-secondary">ICT-BD-902</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-white/5">
+<p class="text-label-sm text-on-surface-variant">Vehicle Type</p>
+<p class="text-body-lg font-bold">Hi-Ace 14 Seater</p>
+</div>
+</div>
+</div>
+<!-- Map Integration Placeholder -->
+<div class="glass-card h-64 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center grayscale contrast-125 brightness-50" data-location="Islamabad" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwAy39zuE0rY84JyazAwskrZWglTJmkbDU47pngi2VW6Qhv9x1NwKtCegwbJDKuS4qrETFM_D06I0T68CPKZakgr6imJoz2wGW2fgRuk-Y5fP680IogwICsO5CUDb8DYAC9UW9WDSIb3_LfU3eg6K4hisI13k4x83ASqO7nkQf8pH0XjH9ZBiRnMb247mm9gTiBa1U2UJpMa_-5COXHRnemaDxE_WF3Er0s3r47hBIMQPInHZQdc0OYdk3CcgpUSuFjYL498Uggg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<div>
+<h4 class="text-body-lg font-bold">Real-time Location</h4>
+<p class="text-label-sm text-on-surface-variant">Tracking ID: TR-8829</p>
+</div>
+<button class="px-4 py-2 bg-secondary text-on-secondary rounded-lg text-label-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+                                Live View
+                            </button>
+</div>
+</div>
+</div>
+<!-- Driver & Contact Card -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="glass-card p-6">
+<div class="flex flex-col items-center text-center mb-6">
+<div class="w-24 h-24 rounded-full border-2 border-primary p-1 mb-4 relative">
+<img class="w-full h-full object-cover rounded-full" data-alt="A high-quality portrait of a professional elderly driver in a neat uniform. He has a friendly and experienced expression, set in a clean urban transportation context with soft morning light. The visual style matches a premium hospitality dashboard with cinematic contrast and high-fidelity textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmEY5r5Gw2rRd4WwUY0V0mupRZV_poI3rW-H0-Sq_pfcyShULU3X2XCAxCCXZXd0HIeNo2y1fS6Rwa7XzcBjQUTH-akY6F5Fxh6mqV2BIuYS0_7eQ6i89Ui3KyhBIHVUdBJ4Ir6X7Nuy4mBDXkajmfHHjOJCgBXE8DuLnFCzJnPuke56DN8xwReTBnCCJ7HlnNIWLc5-YIs62fy-54vSj-J8p43ksImMTNxR32u-TBJ8pCVlJJHIgZ1LdNFH2e9Q8ZENCWL81lSg"/>
+<div class="absolute bottom-1 right-1 w-5 h-5 bg-tertiary border-2 border-background rounded-full"></div>
+</div>
+<h4 class="text-headline-md font-headline-md">Sajid Khan</h4>
+<p class="text-label-sm text-on-surface-variant">Lead Driver • 8 Years Experience</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">call</span>
+<div>
+<p class="text-label-sm text-on-surface-variant">Contact</p>
+<p class="text-body-md font-bold">+92 331 4455667</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</button>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<div>
+<p class="text-label-sm text-on-surface-variant">Verification</p>
+<p class="text-body-md font-bold text-tertiary">Security Verified</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h5 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest mb-4">Emergency Support</h5>
+<button class="w-full py-4 border border-error text-error rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-error/10 transition-all">
+<span class="material-symbols-outlined">sos</span>
+                                Panic Button
+                            </button>
+</div>
+</div>
+<!-- Transport Rules / Notices -->
+<div class="glass-card p-6">
+<h4 class="text-body-lg font-bold mb-4">Transport Protocol</h4>
+<ul class="space-y-3 text-label-sm text-on-surface-variant">
+<li class="flex gap-2">
+<span class="text-primary">•</span> 
+                                Be at the pickup point 5 mins early.
+                            </li>
+<li class="flex gap-2">
+<span class="text-primary">•</span> 
+                                Hostal ID card mandatory for boarding.
+                            </li>
+<li class="flex gap-2">
+<span class="text-primary">•</span> 
+                                No food or drinks allowed inside vehicle.
+                            </li>
+</ul>
+<button class="mt-6 w-full text-secondary font-bold text-label-sm flex items-center justify-center gap-1 hover:underline">
+                            Read Full Policy <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Optional: Not Active State (Hidden by default, shown for UX demo) -->
+<div class="hidden fixed inset-0 z-[60] bg-background/80 backdrop-blur-md flex items-center justify-center p-8" id="no-transport-overlay">
+<div class="glass-card max-w-md w-full p-10 text-center flex flex-col items-center">
+<div class="w-20 h-20 bg-surface-container rounded-full flex items-center justify-center mb-6 border border-white/10">
+<span class="material-symbols-outlined text-[48px] text-on-surface-variant">no_transfer</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Service Not Enrolled</h3>
+<p class="text-body-md text-on-surface-variant mb-8">You are currently not using hostel transport facility. Apply now to get door-to-door university commute.</p>
+<div class="flex flex-col gap-4 w-full">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                        Request Transport Facility
+                    </button>
+<button class="w-full py-3 text-on-surface-variant font-bold rounded-xl hover:bg-white/5 transition-all" onclick="document.getElementById('no-transport-overlay').classList.add('hidden')">
+                        Maybe Later
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for quick actions -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-secondary-container text-on-secondary-container rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<script>
+        // Micro-interaction for sidebar tabs
+        document.querySelectorAll('aside nav a').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                // If we had multi-page logic, this would handle routing
+                console.log('Navigating to:', tab.innerText.trim());
+            });
+        });
+
+        // Simulating the "Not Active" state trigger for presentation
+        // In a real app, this would be based on state data
+        function toggleTransportState() {
+            const overlay = document.getElementById('no-transport-overlay');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Add a subtle parallax effect to glass cards
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.glass-card');
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            
+            cards.forEach(card => {
+                // Very subtle movement
+                // card.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        });
+    </script>
+</body></html>

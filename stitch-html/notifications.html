@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications | Royal Group of Hostel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary-fixed-variant": "#005236",
+                "on-primary": "#68001a",
+                "on-error": "#690005",
+                "inverse-on-surface": "#283044",
+                "on-secondary-fixed-variant": "#004395",
+                "tertiary-fixed": "#6ffbbe",
+                "on-primary-fixed-variant": "#920028",
+                "surface-tint": "#ffb3b6",
+                "on-primary-fixed": "#40000c",
+                "error": "#ffb4ab",
+                "outline": "#ac8889",
+                "error-container": "#93000a",
+                "primary-container": "#e11d48",
+                "inverse-primary": "#be0037",
+                "background": "#0b1326",
+                "surface": "#0b1326",
+                "surface-container-high": "#222a3d",
+                "surface-dim": "#0b1326",
+                "on-primary-container": "#fffaf9",
+                "surface-container": "#171f33",
+                "secondary-fixed-dim": "#adc6ff",
+                "on-background": "#dae2fd",
+                "outline-variant": "#5c3f40",
+                "primary-fixed": "#ffdada",
+                "tertiary": "#4edea3",
+                "on-secondary-container": "#e6ecff",
+                "surface-bright": "#31394d",
+                "on-error-container": "#ffdad6",
+                "on-secondary-fixed": "#001a42",
+                "surface-container-lowest": "#060e20",
+                "secondary": "#adc6ff",
+                "secondary-fixed": "#d8e2ff",
+                "secondary-container": "#0566d9",
+                "on-surface": "#dae2fd",
+                "inverse-surface": "#dae2fd",
+                "on-tertiary-container": "#eefff3",
+                "on-secondary": "#002e6a",
+                "surface-container-highest": "#2d3449",
+                "primary": "#ffb3b6",
+                "surface-variant": "#2d3449",
+                "tertiary-fixed-dim": "#4edea3",
+                "on-tertiary-fixed": "#002113",
+                "on-surface-variant": "#e5bdbe",
+                "surface-container-low": "#131b2e",
+                "primary-fixed-dim": "#ffb3b6",
+                "tertiary-container": "#00845a",
+                "on-tertiary": "#003824"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "base": "8px",
+                "container-padding": "24px",
+                "desktop-max": "1440px",
+                "gutter": "16px"
+            },
+            "fontFamily": {
+                "headline-md": ["Montserrat"],
+                "body-md": ["Inter"],
+                "display-lg": ["Montserrat"],
+                "body-lg": ["Inter"],
+                "display-lg-mobile": ["Montserrat"],
+                "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(23, 31, 51, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(255, 179, 182, 0.05);
+        }
+        .notification-unread {
+            border-left: 4px solid #ffb3b6;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .nav-active {
+            box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Background Decoration -->
+<div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-secondary/10 rounded-full blur-[100px]"></div>
+</div>
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-4 w-64 bg-surface-container/40 backdrop-blur-xl border-r border-white/10 shadow-[0_0_30px_rgba(255,179,182,0.1)] z-50 md:flex hidden">
+<div class="mb-10 px-2">
+<h1 class="text-headline-md font-headline-md font-bold text-primary tracking-tight">Royal Group</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant opacity-70">Islamabad Hostel City</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">person</span>
+<span class="font-body-md text-body-md">Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">bed</span>
+<span class="font-body-md text-body-md">Room Details</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">payments</span>
+<span class="font-body-md text-body-md">Fee Status</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">directions_bus</span>
+<span class="font-body-md text-body-md">Transport</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">report_problem</span>
+<span class="font-body-md text-body-md">Complaints</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg shadow-lg shadow-primary/20 nav-active group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-body-md text-body-md font-semibold">Notifications</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-white/5">
+<button class="w-full py-3 bg-primary-container text-on-primary-container rounded-lg font-bold shadow-lg hover:brightness-110 transition-all active:scale-95">
+                Submit Fee
+            </button>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 left-0 md:left-64 flex justify-between items-center px-8 py-4 bg-surface/30 backdrop-blur-md border-b border-white/10 z-40">
+<div class="flex items-center gap-4">
+<h2 class="text-headline-md font-headline-md text-primary font-bold tracking-tight md:hidden">Royal Group</h2>
+<div class="hidden md:block">
+<p class="text-label-sm font-label-sm text-on-surface-variant">Hostel Management Portal</p>
+<p class="text-body-md font-body-md font-bold text-on-surface">Notifications Center</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-lowest/50 border border-white/10 rounded-full py-2 px-10 text-label-sm font-label-sm focus:border-secondary outline-none transition-all w-64" placeholder="Search notifications..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+<span class="text-label-sm font-label-sm font-semibold text-on-surface hidden lg:block">Welcome, Student</span>
+<img class="w-8 h-8 rounded-full border border-primary/50 object-cover" data-alt="A professional close-up studio portrait of a college student, soft cinematic lighting, dark blue tech-focused background, premium aesthetic, high-end photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQSPZ_sNkntkCne3WJN9yDG9RtA7ZVBJZ-Sf6tDr_mbjb3vbKO4TypiJKTNPqIpK7knq_xMDkI7aaQlHTaiG9B2B0q3ye2-RJ0TnYes69W1Y-RPRHRRZlsaH0lSQL_-xKCIugoMLxuXExpY7yTLddpdo0MYnuf88kp4jysYE33o5BZfQDggDMMF7CSVeAwX1Hyn8nVeUAXjE3PEmtU36DCBC7_8kMEep3YvAf02hgDaiMc6PIp9_oVsltwmgLICSy8LbKm1wUhHw"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-12 px-6 md:ml-64 transition-all duration-300">
+<div class="max-w-4xl mx-auto space-y-6">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="text-display-lg font-display-lg text-on-surface mb-2">Stay Informed</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Manage your hostel alerts and updates in one place.</p>
+</div>
+<button class="text-label-sm font-label-sm text-primary flex items-center gap-2 hover:underline">
+                    Mark all as read
+                    <span class="material-symbols-outlined text-sm">done_all</span>
+</button>
+</div>
+<!-- Notifications List -->
+<div class="space-y-4">
+<!-- Notification Card 1: Urgent/Reminder -->
+<div class="glass-card notification-unread p-5 rounded-xl flex gap-4 hover:bg-surface-container-highest/40 transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-error-container/20 flex items-center justify-center flex-shrink-0 text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">priority_high</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-body-lg font-headline-md text-on-surface group-hover:text-primary transition-colors">Fee due reminder</h4>
+<span class="bg-error-container text-on-error-container text-[10px] uppercase tracking-widest font-bold px-2 py-0.5 rounded-full">Urgent</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">Your hostel fee for the month of October is pending. Please clear the dues by 5th Oct to avoid late payment surcharges.</p>
+<div class="mt-3 flex items-center gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                2 hours ago
+                            </span>
+<button class="text-label-sm font-label-sm text-primary font-bold hover:brightness-125">PAY NOW</button>
+</div>
+</div>
+</div>
+<!-- Notification Card 2: Success/Verification -->
+<div class="glass-card p-5 rounded-xl flex gap-4 hover:bg-surface-container-highest/40 transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/20 flex items-center justify-center flex-shrink-0 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-body-lg font-headline-md text-on-surface group-hover:text-primary transition-colors">Payment verified</h4>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] uppercase tracking-widest font-bold px-2 py-0.5 rounded-full">Verified</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">The security deposit payment for Room 402B has been successfully verified by the account office. Your receipt is now available.</p>
+<div class="mt-3 flex items-center gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                Yesterday, 11:30 AM
+                            </span>
+<button class="text-label-sm font-label-sm text-secondary font-bold hover:brightness-125">DOWNLOAD RECEIPT</button>
+</div>
+</div>
+</div>
+<!-- Notification Card 3: Warning/Fine -->
+<div class="glass-card p-5 rounded-xl flex gap-4 hover:bg-surface-container-highest/40 transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-error-container/10 flex items-center justify-center flex-shrink-0 text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">money_off</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-body-lg font-headline-md text-on-surface group-hover:text-primary transition-colors">Fine added</h4>
+<span class="bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-widest font-bold px-2 py-0.5 rounded-full">Financial</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">A fine of PKR 500 has been added to your account due to an unauthorized appliance found during the monthly room inspection.</p>
+<div class="mt-3 flex items-center gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                Oct 1, 2023
+                            </span>
+<button class="text-label-sm font-label-sm text-on-surface-variant font-bold hover:text-on-surface">VIEW DETAILS</button>
+</div>
+</div>
+</div>
+<!-- Notification Card 4: Support/Complaint -->
+<div class="glass-card p-5 rounded-xl flex gap-4 hover:bg-surface-container-highest/40 transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">maps_ugc</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-body-lg font-headline-md text-on-surface group-hover:text-primary transition-colors">Complaint response</h4>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] uppercase tracking-widest font-bold px-2 py-0.5 rounded-full">Support</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">Maintenance Staff: "The AC unit in your room has been scheduled for repair today between 2 PM and 4 PM. Please ensure access."</p>
+<div class="mt-3 flex items-center gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                Sep 30, 2023
+                            </span>
+</div>
+</div>
+</div>
+<!-- Notification Card 5: General Update -->
+<div class="glass-card p-5 rounded-xl flex gap-4 hover:bg-surface-container-highest/40 transition-all cursor-pointer group opacity-60">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center flex-shrink-0 text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_bus</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-body-lg font-headline-md text-on-surface group-hover:text-primary transition-colors">Transport Schedule Update</h4>
+<span class="bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-widest font-bold px-2 py-0.5 rounded-full">Info</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">New evening shuttle routes have been updated for the weekend commute to Blue Area. Check the Transport tab for details.</p>
+<div class="mt-3 flex items-center gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                Sep 28, 2023
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More Section -->
+<div class="pt-8 flex justify-center">
+<button class="px-8 py-3 border border-white/10 rounded-full text-label-sm font-label-sm hover:bg-white/5 transition-all text-on-surface-variant hover:text-primary">
+                    LOAD PREVIOUS NOTIFICATIONS
+                </button>
+</div>
+</div>
+</main>
+<!-- Floating Action Button Contextual Logic (None for Notifications as per rules) -->
+<!-- Mobile Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 right-0 h-16 bg-surface-container/60 backdrop-blur-xl border-t border-white/10 flex items-center justify-around px-4 md:hidden z-50">
+<a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-semibold">Fees</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="text-[10px] font-semibold">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-semibold">User</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+                card.style.boxShadow = '0 10px 40px rgba(255, 179, 182, 0.1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 0 30px rgba(255, 179, 182, 0.05)';
+            });
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

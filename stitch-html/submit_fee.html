@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Submit Fee | Royal Group of Hostel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary": "#68001a",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#283044",
+                    "on-secondary-fixed-variant": "#004395",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-primary-fixed-variant": "#920028",
+                    "surface-tint": "#ffb3b6",
+                    "on-primary-fixed": "#40000c",
+                    "error": "#ffb4ab",
+                    "outline": "#ac8889",
+                    "error-container": "#93000a",
+                    "primary-container": "#e11d48",
+                    "inverse-primary": "#be0037",
+                    "background": "#0b1326",
+                    "surface": "#0b1326",
+                    "surface-container-high": "#222a3d",
+                    "surface-dim": "#0b1326",
+                    "on-primary-container": "#fffaf9",
+                    "surface-container": "#171f33",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-background": "#dae2fd",
+                    "outline-variant": "#5c3f40",
+                    "primary-fixed": "#ffdada",
+                    "tertiary": "#4edea3",
+                    "on-secondary-container": "#e6ecff",
+                    "surface-bright": "#31394d",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#001a42",
+                    "surface-container-lowest": "#060e20",
+                    "secondary": "#adc6ff",
+                    "secondary-fixed": "#d8e2ff",
+                    "secondary-container": "#0566d9",
+                    "on-surface": "#dae2fd",
+                    "inverse-surface": "#dae2fd",
+                    "on-tertiary-container": "#eefff3",
+                    "on-secondary": "#002e6a",
+                    "surface-container-highest": "#2d3449",
+                    "primary": "#ffb3b6",
+                    "surface-variant": "#2d3449",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "on-tertiary-fixed": "#002113",
+                    "on-surface-variant": "#e5bdbe",
+                    "surface-container-low": "#131b2e",
+                    "primary-fixed-dim": "#ffb3b6",
+                    "tertiary-container": "#00845a",
+                    "on-tertiary": "#003824"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-padding": "24px",
+                    "desktop-max": "1440px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(23, 31, 51, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(255, 179, 182, 0.05);
+        }
+        .glass-input {
+            background: rgba(6, 14, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-input:focus {
+            border-color: #ffb3b6;
+            box-shadow: 0 0 10px rgba(255, 179, 182, 0.2);
+            outline: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .zebra-glass > div:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-4 w-64 bg-surface-container/40 backdrop-blur-xl border-r border-white/10 z-50">
+<div class="mb-10 px-4">
+<h1 class="text-headline-md font-headline-md font-bold text-primary">Royal Group</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant opacity-70">Islamabad Hostel City</p>
+</div>
+<nav class="flex-1 space-y-2 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">person</span>
+<span class="font-body-md text-body-md">Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">bed</span>
+<span class="font-body-md text-body-md">Room Details</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg shadow-lg shadow-primary/20 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-body-md text-body-md">Fee Status</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">directions_bus</span>
+<span class="font-body-md text-body-md">Transport</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">report_problem</span>
+<span class="font-body-md text-body-md">Complaints</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">notifications</span>
+<span class="font-body-md text-body-md">Notifications</span>
+</a>
+</nav>
+<div class="mt-auto p-4 glass-card rounded-xl">
+<button class="w-full py-3 bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-lg shadow-primary/30 active:scale-95 transition-transform">
+                Submit Fee
+            </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar (Shared Component) -->
+<header class="flex justify-between items-center w-full px-8 py-4 bg-surface/30 backdrop-blur-md border-b border-white/10">
+<div class="flex items-center gap-4">
+<h2 class="text-headline-md font-headline-md tracking-tight text-primary">Royal Group of Hostel</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<input class="glass-input text-body-md px-10 py-2 rounded-full w-64 focus:w-80" placeholder="Search..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Welcome, Student</span>
+<div class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio headshot of a college student, male, with short dark hair and a friendly expression. He is wearing a clean charcoal grey hoodie, lit by cinematic soft-box lighting with a hint of red neon rim light to match the luxury hostel aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPJUxB6jkNcgNUxuDFpqN77YZfk46_IHcdsoKo5MAQjfGJo1usgrmAgX0E70veQ81SK1QGjpjMU0JGyn_EVutHWzw9wl3vC2bTnV7Y4Tur0uC12BMuZBusF0zq4eGYUWS0R-grSlS_tk9tawehcbqJXmrNH2kb4rcAS6wKdOWu5tVeDGKbv778lbQJs3rTFgQ5kLUVHIdfJz_E9vnI9OduZvn7wlNTzAtKFHavF09FsWk9hf14UuKkpdxCDvdOIM2iS83tobQPsQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="p-8 max-w-[1440px] mx-auto w-full flex-1">
+<div class="mb-10">
+<h3 class="text-display-lg font-display-lg text-on-surface">Submit Fee</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-2">Manage your hostel dues and upload payment verification.</p>
+</div>
+<!-- Bento Layout Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Form (2/3 width) -->
+<div class="lg:col-span-2 space-y-8">
+<section class="glass-card rounded-2xl p-8">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6" id="paymentForm">
+<!-- Payment Method -->
+<div class="col-span-2 md:col-span-1 flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Payment Method</label>
+<select class="glass-input rounded-xl px-4 py-3 text-on-surface focus:ring-0">
+<option value="bank_transfer">Bank Transfer</option>
+<option value="easypaisa">Easypaisa</option>
+<option value="jazzcash">JazzCash</option>
+</select>
+</div>
+<!-- Amount Paid -->
+<div class="col-span-2 md:col-span-1 flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Amount Paid (PKR)</label>
+<input class="glass-input rounded-xl px-4 py-3 text-on-surface" placeholder="e.g. 15,000" type="number"/>
+</div>
+<!-- Transaction ID -->
+<div class="col-span-2 md:col-span-1 flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Transaction ID</label>
+<input class="glass-input rounded-xl px-4 py-3 text-on-surface" placeholder="TXN-98234..." type="text"/>
+</div>
+<!-- Payment Date -->
+<div class="col-span-2 md:col-span-1 flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Payment Date</label>
+<input class="glass-input rounded-xl px-4 py-3 text-on-surface" type="date"/>
+</div>
+<!-- Receipt Upload -->
+<div class="col-span-2 flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Receipt Upload (Image/PDF)</label>
+<div class="border-2 border-dashed border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center hover:border-primary/50 transition-colors cursor-pointer group bg-surface-container-low/30">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary mb-2 transition-colors">cloud_upload</span>
+<p class="text-body-md font-body-md text-on-surface-variant">Click to browse or drag and drop receipt</p>
+<p class="text-label-sm font-label-sm opacity-50">PNG, JPG or PDF (Max 5MB)</p>
+<input class="hidden" type="file"/>
+</div>
+</div>
+<!-- Notes -->
+<div class="col-span-2 flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Notes (Optional)</label>
+<textarea class="glass-input rounded-xl px-4 py-3 text-on-surface" placeholder="Any additional information..." rows="3"></textarea>
+</div>
+<div class="col-span-2 pt-4">
+<button class="w-full py-4 bg-primary text-on-primary font-bold text-lg rounded-xl shadow-xl shadow-primary/10 hover:shadow-primary/20 hover:scale-[1.01] active:scale-[0.98] transition-all" onclick="handleSubmit()" type="button">
+                                    Submit Payment for Verification
+                                </button>
+</div>
+</form>
+<!-- Success Message (Hidden by default) -->
+<div class="hidden mt-6 p-6 bg-tertiary-container/20 border border-tertiary/30 rounded-xl flex items-start gap-4" id="successMessage">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+<div>
+<h4 class="text-body-md font-bold text-tertiary">Submission Successful</h4>
+<p class="text-label-sm text-on-surface-variant">Your payment has been submitted. Our accountant will verify the transaction within 24-48 hours. You will be notified via the notifications tab.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Info & Help (1/3 width) -->
+<div class="lg:col-span-1 space-y-8">
+<!-- Account Details Card -->
+<section class="glass-card rounded-2xl p-8 overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl">account_balance</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-primary mb-6">Payment Info</h4>
+<div class="space-y-6 relative z-10">
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Account Title</p>
+<p class="text-body-lg font-bold text-on-surface">Royal Group of Hostel</p>
+</div>
+<div class="zebra-glass rounded-xl overflow-hidden border border-white/5">
+<div class="p-4 flex justify-between items-center">
+<div>
+<p class="text-label-sm text-on-surface-variant">Bank AL Habib</p>
+<p class="text-body-md font-mono text-on-surface">0011-223344-01-1</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">content_copy</button>
+</div>
+<div class="p-4 flex justify-between items-center">
+<div>
+<p class="text-label-sm text-on-surface-variant">Easypaisa</p>
+<p class="text-body-md font-mono text-on-surface">0300-1234567</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">content_copy</button>
+</div>
+<div class="p-4 flex justify-between items-center">
+<div>
+<p class="text-label-sm text-on-surface-variant">JazzCash</p>
+<p class="text-body-md font-mono text-on-surface">0311-7654321</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">content_copy</button>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-primary/5 rounded-xl border border-primary/20">
+<p class="text-label-sm text-primary italic">Note: Always double-check the account number before making a transfer. Royal Group is not responsible for transfers to incorrect accounts.</p>
+</div>
+</section>
+<!-- Verification Widget -->
+<section class="glass-card rounded-2xl p-6">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+</div>
+<div>
+<h4 class="text-body-md font-bold">Safe &amp; Secure</h4>
+<p class="text-label-sm text-on-surface-variant">Encrypted Transaction Handling</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-label-sm text-on-surface-variant">Instant receipt tracking</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-label-sm text-on-surface-variant">24/7 Portal accessibility</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-label-sm text-on-surface-variant">Automated SMS confirmation</span>
+</div>
+</div>
+</section>
+<!-- Latest Receipt Preview -->
+<div class="glass-card rounded-2xl overflow-hidden h-40 relative group cursor-pointer">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic, high-contrast photograph of a sleek Pakistani banking app interface on a modern smartphone screen. The phone is held in a hand with shallow depth of field, showing a 'Transaction Successful' green checkmark. Soft red and blue atmospheric lighting reflects off the glass screen, emphasizing a high-tech financial aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCoiUr8bo908IuxHg7ZT9UiJR4w3d8-zWsdbCCIcdUnchCXj3lGN8EfRhE_tiUDYY64YCWh5U9VfpitFnoKkCmP5OizuGwYqmL7Ot3GcqeXnKvOvwch0xRaudbEfUCYWIN_QrKeIOw5p3hZcCKxTvlYvV1Ki-BSjn7VV5ZRc5KDZWq2wGeOHz2oS0Uwdi_9VMkRkHHGSodarMA4vWXLiEhhm3PvvJbWjfyfD4bmaz9qwENj2uOsNJ4frF67RqRd1Q-lHIjRkyBTyg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4">
+<p class="text-label-sm text-white font-bold">View Previous Receipt</p>
+<p class="text-[10px] text-white/70">Submitted 2 days ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Status Footer (Mobile only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full glass-card p-4 flex justify-around border-t border-white/10 z-40">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px]">Fee</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">report_problem</span>
+<span class="text-[10px]">Issue</span>
+</a>
+</div>
+</main>
+<script>
+        function handleSubmit() {
+            const form = document.getElementById('paymentForm');
+            const success = document.getElementById('successMessage');
+            
+            // Basic UI animation for feedback
+            form.style.opacity = '0.3';
+            form.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                success.classList.remove('hidden');
+                success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Reset interaction simulation
+                setTimeout(() => {
+                    form.style.opacity = '1';
+                    form.style.pointerEvents = 'auto';
+                }, 5000);
+            }, 1000);
+        }
+
+        // Custom micro-interaction for glass-input glow
+        document.querySelectorAll('.glass-input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.style.transform = 'translateX(4px)';
+                input.parentElement.style.transition = 'transform 0.3s ease';</script></body></html>

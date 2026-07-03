@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fee Status - Royal Group of Hostel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary": "#68001a",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#283044",
+                    "on-secondary-fixed-variant": "#004395",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-primary-fixed-variant": "#920028",
+                    "surface-tint": "#ffb3b6",
+                    "on-primary-fixed": "#40000c",
+                    "error": "#ffb4ab",
+                    "outline": "#ac8889",
+                    "error-container": "#93000a",
+                    "primary-container": "#e11d48",
+                    "inverse-primary": "#be0037",
+                    "background": "#0b1326",
+                    "surface": "#0b1326",
+                    "surface-container-high": "#222a3d",
+                    "surface-dim": "#0b1326",
+                    "on-primary-container": "#fffaf9",
+                    "surface-container": "#171f33",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-background": "#dae2fd",
+                    "outline-variant": "#5c3f40",
+                    "primary-fixed": "#ffdada",
+                    "tertiary": "#4edea3",
+                    "on-secondary-container": "#e6ecff",
+                    "surface-bright": "#31394d",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#001a42",
+                    "surface-container-lowest": "#060e20",
+                    "secondary": "#adc6ff",
+                    "secondary-fixed": "#d8e2ff",
+                    "secondary-container": "#0566d9",
+                    "on-surface": "#dae2fd",
+                    "inverse-surface": "#dae2fd",
+                    "on-tertiary-container": "#eefff3",
+                    "on-secondary": "#002e6a",
+                    "surface-container-highest": "#2d3449",
+                    "primary": "#ffb3b6",
+                    "surface-variant": "#2d3449",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "on-tertiary-fixed": "#002113",
+                    "on-surface-variant": "#e5bdbe",
+                    "surface-container-low": "#131b2e",
+                    "primary-fixed-dim": "#ffb3b6",
+                    "tertiary-container": "#00845a",
+                    "on-tertiary": "#003824"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-padding": "24px",
+                    "desktop-max": "1440px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(23, 31, 51, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(255, 179, 182, 0.1);
+        }
+
+        .zebra-glass tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 179, 182, 0.2);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 179, 182, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-4 w-64 bg-surface-container/40 backdrop-blur-xl border-r border-white/10 z-50">
+<div class="mb-10 px-4">
+<h1 class="text-headline-md font-headline-md font-bold text-primary">Royal Group</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant opacity-70">Islamabad Hostel City</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<!-- Profile -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-body-md text-body-md">Profile</span>
+</a>
+<!-- Room Details -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="bed">bed</span>
+<span class="font-body-md text-body-md">Room Details</span>
+</a>
+<!-- Fee Status (ACTIVE) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg shadow-lg shadow-primary/20 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-body-md text-body-md">Fee Status</span>
+</a>
+<!-- Transport -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="directions_bus">directions_bus</span>
+<span class="font-body-md text-body-md">Transport</span>
+</a>
+<!-- Complaints -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+<span class="font-body-md text-body-md">Complaints</span>
+</a>
+<!-- Notifications -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-white/5 rounded-lg transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-body-md text-body-md">Notifications</span>
+</a>
+</nav>
+<div class="mt-auto p-4 glass-card rounded-xl border border-primary/20">
+<p class="text-label-sm font-label-sm text-primary mb-2">Total Due</p>
+<p class="text-headline-md font-headline-md mb-4">11,000 PKR</p>
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg hover:brightness-110 transition-all active:scale-95">
+                Submit Fee
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-base py-4 bg-surface/30 backdrop-blur-md border-b border-white/10 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<h2 class="text-headline-md font-headline-md tracking-tight text-primary">Royal Group of Hostel</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant opacity-50" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-label-sm font-label-sm focus:ring-1 focus:ring-secondary min-w-[240px]" placeholder="Search transactions..." type="text"/>
+</div>
+<div class="flex items-center gap-3 pr-4 border-r border-white/10">
+<div class="text-right">
+<p class="text-label-sm font-label-sm font-bold text-on-surface">Welcome, Student</p>
+<p class="text-[10px] text-on-surface-variant">ID: RGH-2023-452</p>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary/30 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a young South Asian university student, wearing a clean white shirt, looking directly into the camera with a subtle confident smile. High-key soft lighting, cinematic bokeh background with deep blues and subtle red highlights reflecting the brand's luxury hospitality aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-NMdU91iAjl6CGTpv_ZLeJjDRHoTuTwVIgBg93LU3JUB7rN_LJ42DBpPElBI0jvZgCbfRlFypKAcGWnBHvO-ZOH9NDzW8d6PgVo1AAJxfiH8z1bpV_xSrTS_d7nSR7rFbr3Z6z7ZwG1Vkut984omrw2Pq4f4lkYJOyIyL5I9GkOw_MlL4k4roLqdhqkYwiABmxufe36KToMq53IA28jW-rG3t-2WmBzzxhwHd_rk3yZDORYtoyXaxURKHPHIyhutjke_Q4WGBWA"/>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle" style="font-variation-settings: 'opsz' 32;">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 max-w-[1440px] mx-auto w-full space-y-8">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-display-lg font-display-lg text-on-surface">Fee Summary</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-1">Review your financial standing for the current semester.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 glass-card rounded-lg flex items-center gap-2 hover:bg-white/10">
+<span class="material-symbols-outlined text-body-md" data-icon="download">download</span>
+<span class="text-label-sm font-label-sm">Download Statement</span>
+</button>
+</div>
+</div>
+<!-- Summary Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+<!-- Card: Monthly Fee -->
+<div class="glass-card p-6 rounded-xl flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-secondary-container/20 text-secondary rounded-lg">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Monthly Fee</p>
+<p class="text-headline-md font-headline-md text-on-surface">25k</p>
+</div>
+</div>
+<!-- Card: Paid -->
+<div class="glass-card p-6 rounded-xl flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-tertiary-container/20 text-tertiary rounded-lg">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Paid</p>
+<p class="text-headline-md font-headline-md text-tertiary">15k</p>
+</div>
+</div>
+<!-- Card: Remaining -->
+<div class="glass-card p-6 rounded-xl flex flex-col justify-between border-primary/20">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-primary-container/20 text-primary rounded-lg">
+<span class="material-symbols-outlined" data-icon="pending">pending</span>
+</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Remaining</p>
+<p class="text-headline-md font-headline-md text-primary">10k</p>
+</div>
+</div>
+<!-- Card: Fine -->
+<div class="glass-card p-6 rounded-xl flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-error-container/20 text-error rounded-lg">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Fine</p>
+<p class="text-headline-md font-headline-md text-error">1k</p>
+</div>
+</div>
+<!-- Card: Total Payable -->
+<div class="glass-card p-6 rounded-xl flex flex-col justify-between bg-primary-container/10 border-primary/30">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-primary-container text-on-primary-container rounded-lg shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-container uppercase tracking-wider">Total Payable</p>
+<p class="text-headline-md font-headline-md text-on-primary-container">11k</p>
+</div>
+</div>
+<!-- Card: Status -->
+<div class="glass-card p-6 rounded-xl flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-secondary-container/20 text-secondary rounded-lg">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Status</p>
+<p class="text-headline-md font-headline-md text-secondary">Partial</p>
+</div>
+</div>
+</div>
+<!-- Transaction Table Container -->
+<div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+<div class="p-6 border-b border-white/10 flex justify-between items-center bg-white/2">
+<h4 class="text-headline-md font-headline-md">Billing History</h4>
+<div class="flex gap-2">
+<select class="bg-surface-container-high border-none text-label-sm font-label-sm rounded-lg focus:ring-1 focus:ring-primary">
+<option>Academic Year 2023-24</option>
+<option>Academic Year 2022-23</option>
+</select>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left zebra-glass">
+<thead>
+<tr class="text-on-surface-variant border-b border-white/10">
+<th class="px-6 py-4 text-label-sm font-label-sm uppercase tracking-widest">Month</th>
+<th class="px-6 py-4 text-label-sm font-label-sm uppercase tracking-widest">Fee (PKR)</th>
+<th class="px-6 py-4 text-label-sm font-label-sm uppercase tracking-widest">Paid (PKR)</th>
+<th class="px-6 py-4 text-label-sm font-label-sm uppercase tracking-widest">Remaining</th>
+<th class="px-6 py-4 text-label-sm font-label-sm uppercase tracking-widest">Fine</th>
+<th class="px-6 py-4 text-label-sm font-label-sm uppercase tracking-widest">Status</th>
+<th class="px-6 py-4 text-label-sm font-label-sm uppercase tracking-widest">Due Date</th>
+<th class="px-6 py-4 text-label-sm font-label-sm uppercase tracking-widest">Action</th>
+</tr>
+</thead>
+<tbody class="text-on-surface font-body-md text-body-md">
+<!-- Oct 2023 (Active) -->
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-5 font-semibold">October 2023</td>
+<td class="px-6 py-5">25,000</td>
+<td class="px-6 py-5">15,000</td>
+<td class="px-6 py-5">10,000</td>
+<td class="px-6 py-5 text-error">1,000</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-secondary-container/10 text-secondary border border-secondary/30 rounded-full text-xs font-bold flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                        Partial Paid
+                                    </span>
+</td>
+<td class="px-6 py-5 text-on-surface-variant">05 Oct 2023</td>
+<td class="px-6 py-5">
+<button class="text-primary hover:underline font-semibold flex items-center gap-1">
+                                        Pay Now <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Sept 2023 (Paid) -->
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-5 font-semibold">September 2023</td>
+<td class="px-6 py-5">25,000</td>
+<td class="px-6 py-5">25,000</td>
+<td class="px-6 py-5">0</td>
+<td class="px-6 py-5">0</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-tertiary-container/10 text-tertiary border border-tertiary/30 rounded-full text-xs font-bold flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                        Paid
+                                    </span>
+</td>
+<td class="px-6 py-5 text-on-surface-variant">05 Sep 2023</td>
+<td class="px-6 py-5">
+<button class="text-on-surface-variant hover:text-white opacity-50">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</button>
+</td>
+</tr>
+<!-- Aug 2023 (Paid) -->
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-5 font-semibold">August 2023</td>
+<td class="px-6 py-5">25,000</td>
+<td class="px-6 py-5">25,000</td>
+<td class="px-6 py-5">0</td>
+<td class="px-6 py-5">0</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-tertiary-container/10 text-tertiary border border-tertiary/30 rounded-full text-xs font-bold flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                        Paid
+                                    </span>
+</td>
+<td class="px-6 py-5 text-on-surface-variant">05 Aug 2023</td>
+<td class="px-6 py-5">
+<button class="text-on-surface-variant hover:text-white opacity-50">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</button>
+</td>
+</tr>
+<!-- July 2023 (Overdue) -->
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-5 font-semibold text-error">July 2023</td>
+<td class="px-6 py-5">25,000</td>
+<td class="px-6 py-5">0</td>
+<td class="px-6 py-5">25,000</td>
+<td class="px-6 py-5 text-error">5,000</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-error-container/10 text-error border border-error/30 rounded-full text-xs font-bold flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+                                        Overdue
+                                    </span>
+</td>
+<td class="px-6 py-5 text-error">05 Jul 2023</td>
+<td class="px-6 py-5">
+<button class="text-primary hover:underline font-semibold flex items-center gap-1">
+                                        Clear Dues
+                                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-white/2 border-t border-white/10 flex items-center justify-between">
+<p class="text-label-sm font-label-sm text-on-surface-variant">Showing billing history for the last 4 months.</p>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg glass-card hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back_ios">arrow_back_ios</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg glass-card hover:text-primary transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg glass-card hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward_ios">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+<div class="glass-card p-6 rounded-2xl">
+<h5 class="text-body-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="help_outline">help_outline</span>
+                        Important Information
+                    </h5>
+<ul class="space-y-3 text-body-md text-on-surface-variant opacity-80">
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2"></span>
+                            Fees must be deposited by the 5th of every month.
+                        </li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2"></span>
+                            A fine of 200 PKR per day will be applicable after the due date.
+                        </li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2"></span>
+                            Online transfers take up to 24 hours to reflect in the portal.
+                        </li>
+</ul>
+</div>
+<div class="glass-card p-6 rounded-2xl bg-secondary-container/5">
+<h5 class="text-body-lg font-bold mb-4">Payment Methods</h5>
+<div class="flex flex-wrap gap-4">
+<div class="flex-1 min-w-[120px] p-4 glass-card rounded-xl border-secondary/20 flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="account_balance">account_balance</span>
+<span class="text-label-sm font-label-sm">Bank Transfer</span>
+</div>
+<div class="flex-1 min-w-[120px] p-4 glass-card rounded-xl border-secondary/20 flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="qr_code_2">qr_code_2</span>
+<span class="text-label-sm font-label-sm">Scan to Pay</span>
+</div>
+<div class="flex-1 min-w-[120px] p-4 glass-card rounded-xl border-secondary/20 flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="credit_card">credit_card</span>
+<span class="text-label-sm font-label-sm">Credit Card</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Mobile Bottom Nav Placeholder (Suppressed on Desktop) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full glass-card p-2 flex justify-around items-center border-t border-white/10 z-50">
+<span class="material-symbols-outlined p-2 text-primary" data-icon="dashboard">dashboard</span>
+<span class="material-symbols-outlined p-2" data-icon="person">person</span>
+<span class="material-symbols-outlined p-2 bg-primary text-on-primary rounded-full" data-icon="payments">payments</span>
+<span class="material-symbols-outlined p-2" data-icon="report_problem">report_problem</span>
+<span class="material-symbols-outlined p-2" data-icon="notifications">notifications</span>
+</div>
+</main>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for adding dynamic glow effect following cursor
+            });
+        });
+
+        // Numeric animation for summary cards
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start) + 'k';
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Trigger animations on load
+        window.onload = () => {
+            const payableCard = document.querySelector('.bg-primary-container\\/10 .text-headline-md');
+            if(payableCard) animateValue(payableCard, 0, 11, 1000);
+        };
+    </script>
+</body></html>
