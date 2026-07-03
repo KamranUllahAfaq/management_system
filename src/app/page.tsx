@@ -14,9 +14,12 @@ export default function LandingPage() {
           <h1 className="text-xl font-bold font-headline-md text-primary-container tracking-tight">Royal Group</h1>
           <span className="hidden sm:inline-block px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[9px] font-bold text-on-surface-variant">ISLAMABAD</span>
         </div>
-        <div className="flex items-center gap-6">
-          <Link href="/login" className="px-5 py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold hover:bg-primary-container/85 transition-all text-sm shadow-lg shadow-primary/10">
+        <div className="flex items-center gap-4">
+          <Link href="/login" className="px-4 py-2 rounded-lg bg-surface-container/60 hover:bg-surface-container/90 border border-white/5 text-on-surface font-semibold transition-all text-sm">
             Student Portal
+          </Link>
+          <Link href="/admin/login" className="px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold hover:bg-primary-container/85 transition-all text-sm shadow-lg shadow-primary/10">
+            Admin Portal
           </Link>
         </div>
       </nav>

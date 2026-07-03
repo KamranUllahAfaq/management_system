@@ -133,8 +133,8 @@ export default function LoginPage() {
           </button>
         </form>
 
-        {/* Back to Home */}
-        <div className="mt-8 pt-6 border-t border-white/5 text-center">
+        {/* Back to Home & Admin Portal */}
+        <div className="mt-8 pt-6 border-t border-white/5 flex justify-between items-center px-2">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-xs text-on-surface-variant hover:text-primary transition-colors group"
@@ -143,6 +143,15 @@ export default function LoginPage() {
               arrow_back
             </span>
             Back to Home
+          </Link>
+          <Link
+            href="/admin/login"
+            className="inline-flex items-center gap-2 text-xs text-primary hover:text-primary/80 hover:underline transition-colors group"
+          >
+            <span className="material-symbols-outlined text-[18px]">
+              admin_panel_settings
+            </span>
+            Admin Portal
           </Link>
         </div>
       </div>

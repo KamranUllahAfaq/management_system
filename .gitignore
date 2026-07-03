@@ -47,4 +47,5 @@ next-env.d.ts
 *.db-journal
 *.db-shm
 *.db-wal
+!dev.db
 
